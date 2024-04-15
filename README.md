@@ -32,57 +32,42 @@ OntoGPT runs on the command line, though there's also a minimal web app interfac
     ontogpt --help
     ```
 
-5. Try a simple example of information extraction:
+5. Clone OntoGPT_FHC_Ontology branch of the repository into a directory of your choice:
 
     ```bash
-    echo "One treatment for high blood pressure is carvedilol." > example.txt
-    ontogpt extract -i example.txt -t drug
+    git clone ...Link Here...
+    ```
+    
+6. If food_ingredientontology.py doesn't exist in src/ontogpt/templates path, get to the repository directory on your terminal(Otherwise skip this step):
+   
+   ```bash
+    cd ...Repo Path...
     ```
 
-    OntoGPT will retrieve the necessary ontologies and output results to the command line. Your output will provide all extracted objects under the heading `extracted_object`.
+   and run the following:
 
-## Web Application
+   ```bash
+    make
+    ```
+   
+7. Get the path to the text data you are willing to extract the information from and decide on which element you want to extract from this data:
+   
+   Elements:
+    - Ingredient
+    - Dose
+    - Food
+    - HealthClaim
+    - HealthEffect
+    - TargetPopulation
+    - Evidence
+    - Statement
+    - Reference
 
-There is a bare bones web application for running OntoGPT and viewing results.
+9. Replace the element and text path and run the following for extraction:
+    
+    ```bash
+    ontogpt extract -t food_ingredient_ontology.Element -i path/to/.txt
+    ```
 
-First, install the required dependencies with `pip` by running the following command:
 
-```bash
-pip install ontogpt[web]
-```
 
-Then run this command to start the web application:
-
-```bash
-web-ontogpt
-```
-
-NOTE: We do not recommend hosting this webapp publicly without authentication.
-
-## Evaluations
-
-OntoGPT's functions have been evaluated on test data. Please see the full documentation for details on these evaluations and how to reproduce them.
-
-## Related Projects
-
-* [TALISMAN](https://github.com/monarch-initiative/talisman/), a tool for generating summaries of functions enriched within a gene set. TALISMAN uses OntoGPT to work with LLMs.
-
-## Tutorials and Presentations
-
-- Presentation: "Staying grounded: assembling structured biological knowledge with help from large language models" - presented by Harry Caufield as part of the AgBioData Consortium webinar series (September 2023)
-  - [Slides](https://docs.google.com/presentation/d/1rMQVWaMju-ucYFif5nx4Xv3bNX2SVI_w89iBIT1bkV4/edit?usp=sharing)
-  - [Video](https://www.youtube.com/watch?v=z38lI6WyBsY)
-- Presentation: "Transforming unstructured biomedical texts with large language models" - presented by Harry Caufield as part of the BOSC track at ISMB/ECCB 2023 (July 2023)
-  - [Slides](https://docs.google.com/presentation/d/1LsOTKi-rXYczL9vUTHB1NDkaEqdA9u3ZFC5ANa0x1VU/edit?usp=sharing)
-  - [Video](https://www.youtube.com/watch?v=a34Yjz5xPp4)
-- Presentation: "OntoGPT: A framework for working with ontologies and large language models" - talk by Chris Mungall at Joint Food Ontology Workgroup (May 2023)
-  - [Slides](https://docs.google.com/presentation/d/1CosJJe8SqwyALyx85GWkw9eOT43B4HwDlAY2CmkmJgU/edit)
-  - [Video](https://www.youtube.com/watch?v=rt3wobA9hEs&t=1955s)
-
-## Citation
-
-The information extraction approach used in OntoGPT, SPIRES, is described further in: Caufield JH, Hegde H, Emonet V, Harris NL, Joachimiak MP, Matentzoglu N, et al. Structured prompt interrogation and recursive extraction of semantics (SPIRES): A method for populating knowledge bases using zero-shot learning. _Bioinformatics_, Volume 40, Issue 3, March 2024, btae104, [https://doi.org/10.1093/bioinformatics/btae104](https://doi.org/10.1093/bioinformatics/btae104).
-
-## Acknowledgements
-
-This project is part of the [Monarch Initiative](https://monarchinitiative.org/). We also gratefully acknowledge [Bosch Research](https://www.bosch.com/research) for their support of this research project.
