@@ -96,8 +96,8 @@ class SPIRESEngine(KnowledgeEngine):
                 raw_text, cls, object=object  # type: ignore
             )
         return ExtractionResult(
-            input_text=text,
-            raw_completion_output=raw_text,
+            input_text="--",
+            raw_completion_output="--",
             prompt=self.last_prompt,
             extracted_object=extracted_object,
             named_entities=self.named_entities,
@@ -244,8 +244,8 @@ class SPIRESEngine(KnowledgeEngine):
         payload = self.client.complete(prompt, show_prompt)
         prediction = self.parse_completion_payload(payload, object=object)
         return ExtractionResult(
-            input_text=prompt,
-            raw_completion_output=payload,
+            input_text="--",
+            raw_completion_output="--",
             # prompt=self.last_prompt,
             results=[prediction],
             named_entities=self.named_entities,
