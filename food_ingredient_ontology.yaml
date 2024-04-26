@@ -1,0 +1,127 @@
+id: https://w3id.org/ontogpt/food_ingredient_ontology
+name: food-ingredient-ontology
+title: Food Ingredient Ontology
+description: >-
+  An ontology for representing the composition of foods, their ingredients, associated doses and frequencies, parts, health claims, health effects, target populations, and the evidence supporting these claims.
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  sio: http://semanticscience.org/resource/
+  bp: http://w3id.org/ontogpt/food-ingredient-ontology
+  linkml: https://w3id.org/linkml/
+
+default_prefix: bp
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+classes:
+  Ingredient:
+    tree_root: true
+    is_a: NamedEntity
+    id_prefixes:
+      - CHEBI
+    attributes:
+      dose:
+        description: The dosage amount of the ingredient
+        range: Dose
+      frequency:
+        description: How often the ingredient is consumed
+        range: Frequency
+      part_of_food:
+        description: The food that contains the ingredient
+        range: Food
+      health_claim:
+        description: Health claims associated with the ingredient
+        range: HealthClaim
+
+  Dose:
+    attributes:
+      has_unit:
+        description: The unit of the dose
+        range: Unit
+      has_value:
+        description: The numerical value of the dose
+        range: float
+
+  Food:
+    is_a: NamedEntity
+    id_prefixes:
+      - FOODON
+
+  HealthClaim:
+    attributes:
+      refers_to_health_effect:
+        description: The health effect associated with the health claim
+        range: HealthEffect
+      describes_statement:
+        description: The statement described by the health claim
+        range: Statement
+
+  HealthEffect:
+    is_a: NamedEntity
+    id_prefixes:
+      - HP
+    attributes:
+      is_attribute_of_target_population:
+        description: The target population that experiences the health effect
+        range: TargetPopulation
+
+  TargetPopulation:
+    is_a: NamedEntity
+    id_prefixes:
+      - HANCESTRO
+    attributes:
+      has_quality:
+        description: The biological quality of the target population
+        range: BiologicalQuality
+
+  Evidence:
+    attributes:
+      claim:
+        description: Short statement described by the health claim
+        range: Statement
+      evidence:
+        description: The actual sentences of the evidence supporting the health claim until the end of the sentence citing the reference
+        range: EvidenceSupportingClaim
+      evidence_for:
+        description: The claim supported by the evidence
+        range: Statement
+      cites:
+        description: The references cited as evidence
+        range: Reference
+
+  Statement:
+    is_a: NamedEntity
+    attributes:
+      text:
+        description: The textual representation of the statement
+        range: string
+
+  Reference:
+    is_a: NamedEntity
+    attributes:
+      identifier:
+        description: The unique identifier of the reference
+        range: string
+
+types:
+  Claim:
+    base: string
+    description: A health claim associated with an ingredient.
+  EvidenceSupportingClaim:
+    base: string
+    description: The type of evidence supporting a health claim.
+  Frequency:
+    base: string
+    description: How often the ingredient is used, expressed in specific intervals or times per unit (e.g., daily, weekly).
+
+  Unit:
+    base: string
+    description: The unit of measurement for the dose (e.g., mg for milligrams, L for liters).
+
+  BiologicalQuality:
+    base: string
+    description: Describes a biological quality or characteristic relevant to the target population or health effect.
