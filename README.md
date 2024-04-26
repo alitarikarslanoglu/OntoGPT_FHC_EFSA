@@ -23,6 +23,6 @@ OntoGPT runs on the command line, though there's also a minimal web app interfac
     ontogpt --help
     ```
 
-5. Place 'food_ingredient_ontology.yaml' and 'food_ingredient_ontology.py' into 'ontogpt > src > ontogpt > templates'
+5. Place `food_ingredient_ontology.yaml` and `food_ingredient_ontology.py` into `ontogpt > src > ontogpt > templates`
 
-6. Run 'run_command.ipynb'
+6. Run `run_command.ipynb`
