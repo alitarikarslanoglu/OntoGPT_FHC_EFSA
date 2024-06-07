@@ -1,0 +1,20 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix MESH: <http://identifiers.org/mesh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:6e106f46-7e46-41b9-a0e5-e447064fb90f a sio:SIO_000897 ;
+    rdfs:label "Folate contributes to normal psychological functions" ;
+    sio:SIO_000628 [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaining%20a%20function,
+                AUTO:psychological%20functions ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "ns" ],
+        [ a FHC:Evidence ;
+            rdf:Resource "The Panel concludes that a cause and effect relationship has been established between the dietary intake of folate and contribution to normal psychological functions." ],
+        AUTO:General%20population,
+        MESH:M0519540 .
+

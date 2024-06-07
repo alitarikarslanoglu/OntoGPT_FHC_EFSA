@@ -1,0 +1,224 @@
+id: https://w3id.org/ontogpt/ClaimAnalysis
+name: ClaimAnalysis
+title: ClaimAnalysis
+description: >-
+  This Ontology aims to extract information about a food health claim from the documents published by EFSA
+license: https://creativecommons.org/publicdomain/zero/1.0/
+prefixes:
+  FHC: http://w3id.org/ontogpt/fhc/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  sio: http://semanticscience.org/resource/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  owl: http://www.w3.org/2002/07/owl#
+  dc: http://purl.org/dc/elements/1.1/
+  dct: http://purl.org/dc/terms/
+  GO: http://purl.obolibrary.org/obo/GO_
+  MESH: http://identifiers.org/mesh/
+  DRON: http://purl.obolibrary.org/obo/DRON_
+
+default_prefix: FHC
+default_range: string
+
+imports:
+  - linkml:types
+  - core
+
+
+classes:
+  FoodHealthClaim:
+    is_a: CompoundExpression
+    tree_root: true
+    class_uri: sio:SIO_000897
+    attributes:
+      url:
+        identifier: true
+        range: uriorcurie
+        slot_uri: rdf:Resource
+        annotations:
+          prompt.skip: true
+      
+      label: 
+        range: string 
+        description: statement of the health claim being made
+        slot_uri: rdfs:label
+        annotations:
+          prompt: >-
+            Extract the main claim being made, including the food constituent and its effect of the human body. 
+            For demonstration, the structure should be along the lines of 'Barley grain fibre contributes to an increase in faecal bulk'
+          owl: AnnotationProperty, AnnotationAssertion
+      
+      has_food_constituent: 
+        range: FoodConstituent
+        description: food constituent that is the subject of the health claim
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the food constituent (nutrient, compound) that is the subject of the health claim. 
+            Make sure to keep only whole names and ignore abbreviations. 
+          owl: ObjectProperty
+      has_dose:
+        range: Dose
+        description: The dosage amount of the food constituent as in 250g/day. If it isnt mentioned, leave it 'not specified'.
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the dosage amount of the food constituent. 
+            For demonstration, the structure should be along the lines of - 
+            '3 g/day'
+          owl: ObjectProperty
+      has_target_population:
+        range: TargetPopulation
+        description: The target population for the health claim
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the target population for the health claim. 
+            For demonstration, the structure should be along the lines of - 
+            'general population'
+          owl: ObjectProperty
+      has_evidence:
+        range: Evidence
+        description: Evidence supporting the health claim
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the evidence supporting the health claim. 
+            For demonstration, the structure should be along the lines of - 
+            Collect the supporting evidence and keep the citations. Avoid sentences starts with 'The Panel'
+          owl: ObjectProperty
+      
+      has_health_effect: 
+        range: HealthEffect
+        description: claimed health effect on the human body
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the claimed health effect on the human body. 
+            For demonstration, the structure should be along the lines of - 
+            'maintenance of normal blood cholesterol concentrations' or 'reduction of excessive intestinal gas accumulation'
+          owl: ObjectProperty
+  TargetPopulation:
+    is_a: NamedEntity
+    attributes:
+      has_quality:
+        description: The biological quality of the target population
+        range: string
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the biological quality of the target population. 
+            For demonstration, the structure should be like along the lines of - 
+            'general population','Adults performing high intensity exercise','Adult men and women'
+          owl: ObjectProperty
+  Dose:
+    attributes:
+      has_unit:
+        description: The unit of the dose
+        range: string
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the unit of the dose. 
+            For demonstration, the structure should be along the lines of - 
+            'g','mg','ns'(for not specified)
+          owl: ObjectProperty
+      has_value:
+        description: The numerical value of the dose
+        range: string
+        slot_uri: sio:SIO_000628
+        annotations:
+          prompt: >-
+            Extract the numerical value of the dose. 
+            For demonstration, the structure should be along the lines of - 
+            '3', 'ns'(for not specified)
+          owl: ObjectProperty
+  HealthEffect: 
+    is_a: CompoundExpression 
+    attributes: 
+      refers_to_phenotype: 
+        range: Phenotype
+        description: phenotype mentioned in the health effect
+        slot_uri: sio:SIO_000628
+        annotations: 
+          prompt: >-
+            Extract the phenotype mentioned in the health effect. 
+            As demonstration, phenotype in 'maintenance of normal blood cholesterol concentrations' would be
+            'blood cholesterol concentration'
+          owl: ObjectProperty
+
+      refers_to_relationship_effect: 
+        range: RelationshipEffect 
+        description: relationship effect being claimed.  
+        slot_uri: sio:SIO_000628
+        annotations: 
+          prompt: >-
+            Extract the relation-effect being claimed for the phenotype. Classify as one of: 
+            1. Enhancing a function 
+            2. Maintaning a function 
+            3. Reducing a risk factor 
+          owl: ObjectProperty
+  FoodConstituent: 
+    is_a: NamedEntity
+    id_prefixes: 
+      - DRON
+      - MESH
+    annotations: 
+      annotators: 
+        sqlite:obo:dron, sqlite:obo:mesh
+    # attributes: 
+    #   url:
+    #     identifier: true
+    #     range: string
+    #     slot_uri: rdf:Resource
+    #     annotations:
+    #       prompt.skip: true
+
+  Phenotype: 
+    is_a: NamedEntity
+    class_uri: sio:SIO_010056 
+    # attributes:
+      # url:
+      #   identifier: true
+      #   range: uriorcurie
+      #   slot_uri: rdf:Resource
+      #   annotations:
+      #     prompt.skip: true
+    id_prefixes: 
+      - GO
+      - MESH
+    annotations: 
+      annotators: 
+        sqlite:obo:go, sqlite:obo:mesh
+
+  RelationshipEffect: 
+    attributes: 
+      url:
+        identifier: true
+        range: uriorcurie
+        slot_uri: rdf:Resource
+        annotations:
+          prompt.skip: true
+  
+  Evidence:
+    is_a: CompoundExpression
+    attributes:
+      text:
+        description: Supporting evidence of a health claim.
+        range: string
+        slot_uri: rdf:Resource
+
+      has_citations:
+        slot_uri: sio:SIO_000628
+        description: The references cited in the evidence as "(Munoz et al., 2007), (IoM, 2001)"
+        range: Citations
+  Citations:
+    is_a: NamedEntity
+    attributes:
+      url:
+        identifier: false
+        description: The unique identifier of the reference
+        range: string
+        slot_uri: rdf:Resource
+        annotations:
+          prompt.skip: true

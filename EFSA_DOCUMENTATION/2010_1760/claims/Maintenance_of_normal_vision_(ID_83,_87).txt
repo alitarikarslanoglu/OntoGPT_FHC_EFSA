@@ -1,0 +1,46 @@
+Scientific Substantiation:
+Thirteen references were provided for the substantiation of the claimed effect, including four authoritative body reports, two reviews, one meta-analysis, five human studies and one consensus report. One reference provided regulatory provisions and most of the references addressed endpoints unrelated to the claimed effect, including pregnancy outcomes, prevention of neural tube defects, human reproduction and antioxidant activity. The Panel considers that no conclusions can be drawn from these references for the scientific substantiation of the claimed effect. A meta-analysis of case-control studies in patients with retinal vascular occlusive disease (Cahill et al., 2003), a study by Kamburoglu et al. (2006) with patients diagnosed with age-related macular degeneration and a longitudinal study in Pima Indians with Type 2 diabetes (Looker et al., 2003) were not considered to be pertinent to the claimed effect because the Panel considers that the evidence provided does not establish that patients with retinal vascular occlusive disease, patients with age-related macular degeneration or individuals with Type 2 diabetes are representative of the general population with regard to normal vision. The study of Taylor et al. (2002) evaluated the odds for early age-related cortical and posterior subcapsular lens opacities and long term intake of vitamins and carotenoids in 492 non-diabetic women aged 53–73 years and found that no nutrient intake measure was related to the prevalence of opacities in the total sample. Sub-group analyses, however, indicated that there was a significant correlation between folate intake and posterior subcapsular lens opacities in a subgroup of never-smokers (P=0.02); the Panel notes that the association with folate intake might be explained by the high correlation (r=0.42) between folate and carotenoid intakes in their data-set and that diets high in folate are also generally high in carotenoids. In weighing the evidence, the Panel noted that the only human study presented was an epidemiological study which did not show any effect of long term intake of folate from foods or supplement use on the primary vision outcome measures. The Panel concludes that a cause and effect relationship has not been established between the dietary intake of folate and the maintenance of normal vision.
+
+Conditions and Restrictions:
+  
+The Panel considers that in order to bear the claims a food should be at least a source of folate as per 
+Annex to Regulation (EC) No 1924/2006. Such amounts can be easily consumed as part of a balanced 
+diet. The target population is the general population. Tolerable Upper Intake Levels (ULs) have been 
+established for folic acid for children and adults (SCF, 2000). 
+
+
+Conclusions:
+The claimed effect is “eye health”, “eye health, folic acid with vitamin E and C”. The target population is assumed to be the general population. Maintenance of normal vision is a beneficial physiological effect. A cause and effect relationship has not been established between the dietary intake of folate and the maintenance of normal vision.
+
+References:
+  
+Cahill MT, Stinnett SS and Fekrat S, 2003. Meta-analysis of plasma homocysteine, serum folate, 
+serum vitamin B(12), and thermolabile MTHFR genotype as risk factors for retinal vascular 
+occlusive disease. American Journal of Ophthalmology, 136, 1136-1150. 
+Carmel R, 2006. Folic acid In: Modern Nutrition in Health and Disease. Eds Shils M, Shike M, Ross 
+C, Caballero B, Cousins RLippincott Williams & Wilkins, Baltimore, Philadephia. 470-481. 
+EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA), 2009. Scientific Opinion on the 
+substantiation of health claims related to folate and blood formation (ID 79), homocysteine 
+metabolism (ID 80), energy-yielding metabolism (ID 90), function of the immune system (ID 91), 
+function of blood vessels (ID 94, 175, 192), cell division (ID 193), and maternal tissue growth 
+during pregnancy (ID 2882) pursuant to Article 13(1) of Regulation (EC) No 1924/2006 on request 
+from the European Commission. EFSA Journal, 7(9):1213, 22 pp. 
+WHO/FAO (World Health Organization/Food and Agriculture Organization), 2002. Human Vitamin 
+and Mineral Requirements - FAO/WHO expert consultation on human vitamin and mineral 
+requirements. 
+IoM (Institute of Medicine), 1998. Dietary Reference Intakes for thiamin, riboflavin, niacin, vitamin 
+B6, folate, vitamin B12, pantothenic acid, biotin and choline. National Academy Press, 
+Washington, D.C.  
+Kamburoglu G, Gumus K, Kadayifcilar S, and Eldem B, 2006. Plasma homocysteine, vitamin B12 
+and folate levels in age-related macular degeneration. Graefe's Archive of Clinical and 
+Experimental Ophthalmology, 244, 565-569. 
+Looker HC, Fagot-Campagna A, Gunter EW, Pfeiffer CM, Narayan KM, Knowler WC and Hanson 
+RL, 2003. Homocysteine as a risk factor for nephropathy and retinopathy in Type 2 diabetes. 
+Diabetologia, 46, 766-772. 
+SCF (Scientific Committee on Food), 2000. Opinion of the Scientific Committee on Food on the 
+Tolerable Upper Intake Level of Folate. 
+Taylor A, Jacques PF, Chylack LT, Jr., Hankinson SE, Khu PM, Rogers G, Friend J, Tung W, Wolfe 
+JK, Padhye N, and Willett WC, 2002. Long-term intake of vitamins and carotenoids and odds of 
+early age-related cortical and posterior subcapsular lens opacities. American Journal of Clinical 
+Nutrition, 75, 540-549. 
+ 

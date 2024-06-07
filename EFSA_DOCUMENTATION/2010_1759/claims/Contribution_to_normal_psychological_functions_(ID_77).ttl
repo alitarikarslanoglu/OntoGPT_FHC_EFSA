@@ -1,0 +1,21 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix MESH: <http://identifiers.org/mesh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:4955d08c-ca22-4472-a7c1-544b97c43594 a sio:SIO_000897 ;
+    rdfs:label "Vitamin B6 contributes to normal psychological functions" ;
+    sio:SIO_000628 [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaining%20a%20function,
+                AUTO:psychological%20functions ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "'ns'" ],
+        [ a FHC:Evidence ;
+            sio:SIO_000628 <http://example.org/AUTO/%28EFSA%20Journal%2C%207%289%29%3A1225%2C%2020%20pp.%29> ;
+            rdf:Resource "“The role of vitamins and minerals in mental performance (where mental fish performance stands for those aspects of brain and nerve functions which determin aspects like concentration, learning, memory and reasoning)”" ],
+        AUTO:General%20population,
+        MESH:D025101 .
+

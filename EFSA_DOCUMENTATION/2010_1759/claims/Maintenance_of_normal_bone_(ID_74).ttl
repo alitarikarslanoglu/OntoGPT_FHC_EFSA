@@ -1,0 +1,21 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix MESH: <http://identifiers.org/mesh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:68159893-79ca-48f6-8254-c10f3d208715 a sio:SIO_000897 ;
+    rdfs:label "Vitamin B6 contributes to the maintenance of normal bone" ;
+    sio:SIO_000628 [ a FHC:Evidence ;
+            sio:SIO_000628 AUTO:None ;
+            rdf:Resource "Most of the studies dealt with the role of homocysteine as a putative risk factor for osteoporosis, including six textbooks, two opinions of scientific bodies, one review, five human studies, and two other publications." ],
+        [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaining%20a%20function,
+                AUTO:bone%20health ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "ns" ],
+        AUTO:General%20population,
+        MESH:D025101 .
+

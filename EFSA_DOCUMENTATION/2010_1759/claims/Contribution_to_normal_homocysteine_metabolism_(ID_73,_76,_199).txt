@@ -1,0 +1,34 @@
+Scientific Substantiation:
+The transsulphuration pathway is an alternative metabolic route to remethylation of homocysteine to methionine. The pathway utilises the pyridoxal phosphate-dependent enzymes, cystathionine β-synthase and cystathionine γ-lyase, and catabolises homocysteine through condensation with serine to cystathionine, followed by cleavage of that molecule to produce cysteine and α-ketobutyrate (Mackey et al., 2006). Under conditions of maximal metabolic efficiency, plasma concentration of homocysteine ranges from 4 to 10 µmol/L. Metabolic blocks in homocysteine metabolism lead to accumulation of intra-cellular homocysteine with subsequent export into the blood. Depending on the magnitude of the metabolic impairment, plasma homocysteine can rise to varying degrees. Hyperhomocysteinemia is also caused by B vitamin deficiencies. Deficiencies of folate, vitamin B6 and vitamin B12 lead to impaired homocysteine metabolism causing mild, moderate, or severe elevations in plasma homocysteine, depending on the severity of the deficiency, as well as the coexistence of genetic or other factors that interfere with homocysteine metabolism (Miller, 2005). The Panel concludes that a cause and effect relationship has been established between the dietary intake of vitamin B6 and contribution to normal homocysteine metabolism.
+
+Conditions and Restrictions:
+ 
+The Panel considers that in order to bear the claims a food should be at least a source of vitamin B6 as 
+per Annex to Regulation (EC) No 1924/2006. Such amounts can be easily consumed as part of a 
+balanced diet. The target population is the general population. Tolerable Upper Intake Levels (ULs) 
+have been established for vitamin B6 in children, adolescents and adults (SCF, 2000). 
+
+
+Conclusions:
+The claimed effects are “homocysteine levels”, “homocysteine metabolism” and “heart health”. The target population is assumed to be the general population. Contribution to normal homocysteine metabolism is a beneficial physiological effect.  A cause and effect relationship has been established between the dietary intake of vitamin B6 and contribution to normal homocysteine metabolism.  The following wording reflects the scientific evidence: “Vitamin B6 contributes to normal homocysteine metabolism”.
+
+References:
+ 
+EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA), 2009. Scientific Opinion on the 
+substantiation of health claims related to vitamin B6 and protein and glycogen metabolism (ID 65, 
+70, 71), function of the nervous system (ID 66), red blood cell formation (ID 67, 72, 186), function 
+of the immune system (ID 68), regulation of hormonal activity (ID 69) and mental performance 
+(ID 185) pursuant to Article 13(1) of Regulation (EC) No 1924/2006 on request from the European 
+Commission. EFSA Journal, 7(9):1225, 20 pp. 
+IoM (Institute of Medicine), 2000. Dietary Reference Intakes for thiamin, riboflavin, niacin, vitamin 
+B6, folate, vitamin B12, pantothenic acid, biotin and cholin. National Academy Press, Washington, 
+D.C. 
+Mackey AD, Davis SR and Gregory JF, 2006. Vitamin B6. In: Modern Nutrition in health and 
+disease. Eds Shils ME, Shike M, Ross AC, Caballero B and Cousins RJ. Lippincott Williams and 
+Wilkins, Baltimore, 194-210. 
+McCormick DB, 2006. Vitamin B6. In: Present knowledge in nutrition. Eds Bowman BA and Russell 
+RM. International Life Sciences Institute (ILSI), Washington, D.C, 269-277. 
+Miller JW, 2005. Homocysteine. In: Encyclopedia of Human Nutrition. Eds Caballero B, Allen L, 
+Prentice A. Elsevier, Oxford, 462-469. 
+SCF (Scientific Committee on Food), 2000. Opinion of the Scientific Committee on Food on the 
+Tolerable Upper Intake Level of vitamin B6. Expressed on 19 October 2000. 

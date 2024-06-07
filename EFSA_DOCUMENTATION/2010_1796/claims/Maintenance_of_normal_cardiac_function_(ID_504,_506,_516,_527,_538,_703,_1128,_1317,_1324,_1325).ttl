@@ -1,0 +1,21 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:c34ac56f-a272-42a9-85e9-5d8408513092 a sio:SIO_000897 ;
+    rdfs:label "EPA and DHA contribute to the maintenance of normal cardiac function" ;
+    sio:SIO_000628 [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaning%20a%20function,
+                AUTO:cardiac%20function ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "250",
+                "mg" ],
+        [ a FHC:Evidence ;
+            sio:SIO_000628 <http://example.org/AUTO/%28EFSA%2C%202005%29%2C%20%28EFSA%2C%202009%29%2C%20%28EFSA%20Panel%20on%20Dietetic%20Products%2C%20Nutrition%20and%20Allergies%20%28NDA%29%2C%202010%29%2C%20%28Mozaffarian%20and%20Rimm%2C%202006%29%2C%20%28Mozaffarian%2C%202008%29%2C%20%28Harris%20et%20al.%2C%202008%29%2C%20%28Harris%20et%20al.%2C%202009a%29%2C%20%28Harris%20et%20al.%2C%202009b%29> ;
+            rdf:Resource "Most recent evidence derived from meta-analyses of randomized trials and large prospective studies shows a negative relation to coronary heart disease mortality in a dose-dependent manner up to about 250 mg per day." ],
+        AUTO:EPA%20and%20DHA,
+        AUTO:general%20population .
+

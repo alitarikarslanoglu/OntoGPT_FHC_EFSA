@@ -1,0 +1,22 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
+@prefix MESH: <http://identifiers.org/mesh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:37193f2e-e2eb-45cb-95b5-f714556dd756 a sio:SIO_000897 ;
+    rdfs:label "Folate contributes to normal amino acid synthesis" ;
+    sio:SIO_000628 [ a FHC:Evidence ;
+            sio:SIO_000628 <http://example.org/AUTO/%28IoM%2C%201998%3B%20FAO/WHO%2C%202002%3B%20Carmel%2C%202006%3B%20EFSA%20Journal%2C%207%289%29%3A1213%2C%2022%20pp.%29> ;
+            rdf:Resource "The dietary intake of folate has been linked with contribution to normal amino acids synthesis through involvement in amino acids interconversions, methylation reactions, and as a substrate in single-carbon metabolism." ],
+        [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaining%20a%20function,
+                GO:0008652 ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "'ns'" ],
+        AUTO:General%20population,
+        MESH:M0519540 .
+

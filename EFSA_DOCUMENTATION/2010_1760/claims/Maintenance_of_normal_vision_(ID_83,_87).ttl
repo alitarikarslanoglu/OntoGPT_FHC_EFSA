@@ -1,0 +1,22 @@
+@base <http://example.org/NOPREFIX/> .
+@prefix AUTO: <http://example.org/AUTO/> .
+@prefix FHC: <http://w3id.org/ontogpt/fhc/> .
+@prefix GO: <http://purl.obolibrary.org/obo/GO_> .
+@prefix MESH: <http://identifiers.org/mesh/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+
+AUTO:0d313b75-dd13-4ec7-926e-aea7c5023980 a sio:SIO_000897 ;
+    rdfs:label "Dietary intake of folate and the maintenance of normal vision" ;
+    sio:SIO_000628 [ a FHC:Evidence ;
+            sio:SIO_000628 AUTO:None ;
+            rdf:Resource "Thirteen references including four authoritative body reports, two reviews, one meta-analysis, five human studies, one consensus report, and one reference on regulatory provisions; however, none conclusively supported the efficacy of folate in maintaining normal vision as references were not pertinent to the target population or endpoints unrelated to claimed effect were studied." ],
+        [ a FHC:Dose ;
+            sio:SIO_000628 "ns" ],
+        [ a FHC:HealthEffect ;
+            sio:SIO_000628 AUTO:Maintaining%20a%20function,
+                GO:0007601 ],
+        AUTO:General%20population,
+        MESH:M0519540 .
+
