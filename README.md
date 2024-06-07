@@ -36,3 +36,9 @@ OntoGPT runs on the command line, though there's also a minimal web app interfac
 10. After adjustments, running sequence must be as `pdf_dorectory_manager.ipynb` -> `extract_sessions.ipynb` -> `main.ipynb`
 
 
+## EFSA_DOCUMENTATION:
+
+This document is the instance of how the automation created works.
+
+Each folder inside, consists of one pdf EFSA published. Additionally, there is a folder called `claims` where each text file represents the  related content for a claim and each turtle file has the rdf of extracted object.
+
