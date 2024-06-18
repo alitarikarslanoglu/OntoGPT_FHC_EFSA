@@ -1,0 +1,30 @@
+[
+    {
+        "Food": "selenium",
+        "Phenotype": "normal hair",
+        "Target_population": "general population",
+        "Citations": "Biesalski et al. (1995);Sunde (2006);Abrams et al. (1992);Kanekura et al. (2005);Masumoto et al. (2007);Vinton et al. (1987)",
+        "DOI": "-"
+    },
+    {
+        "Food": "Selenium",
+        "Phenotype": "protection against heavy metals",
+        "Target_population": "general population",
+        "Citations": "SCF (2000)",
+        "DOI": "-"
+    },
+    {
+        "Food": "selenium",
+        "Phenotype": "normal joints",
+        "Target_population": "general population",
+        "Citations": "",
+        "DOI": "-"
+    },
+    {
+        "Food": "Selenium",
+        "Phenotype": "Normal nails",
+        "Target_population": "General population",
+        "Citations": "Biesalski et al. (1995); Sunde (2006); Abrams et al. (1992); Kanekura et al. (2005); Masumoto et al. (2007); Vinton et al. (1987); SCF (2000)",
+        "DOI": "-"
+    }
+]

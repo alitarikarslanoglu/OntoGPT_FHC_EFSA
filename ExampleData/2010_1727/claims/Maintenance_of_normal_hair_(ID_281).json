@@ -1,0 +1,55 @@
+---
+input_text: --
+raw_completion_output: |-
+  label: Selenium contributes to the maintenance of normal hair.
+  has_food_constituent: selenium
+  has_dose: Not explicitly mentioned in the provided text. Reference to Tolerable Upper Intake Levels (ULs) has been mentioned.
+  has_target_population: general population
+  has_evidence: Deficiency in selenium has been shown to result in various disorders including impairment of hair (Biesalski et al., 1995; Sunde, 2006). Clinical manifestations such as white nail beds, pseudoalbinism, alopecia and thin hair have been observed in particular in patients receiving total parenteral nutrition lacking selenium. Administration of selenium was able to restore these deficiency symptoms (Abrams et al., 1992; Kanekura et al., 2005; Masumoto et al., 2007; Vinton et al., 1987). The Panel concludes that a cause and effect relationship has been established between the dietary intake of selenium and maintenance of normal hair. However, the evidence provided does not establish that inadequate intake of selenium leading to impaired maintenance of normal hair occurs in the general EU population.
+  has_phenotype: normal hair
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  text: <Extract the evidence (including all citations) from the text below. Include both supporting and contradicting evidence.
+    1. Take a long-form, highly detailed and descriptive approach. Avoid adding your own analysis, summarization.
+    2. Incorporate, for study cited, all details pertaining to:
+      2.1 the type of clinical studies
+      2.2 mechanism of actions
+      2.3 dosages used in the study, including amounts and frequency
+      2.4 efficacy
+      2.5 limitations.
+    3. Overall assessment, evidence weighting, and conclusion drawn by the panel.
+    2. Include all citations of references to journal articles in the text, as they appear in context of the evidence.
+    3. Output as ONE block/paragraph of plain text, without quotes. Note that terms like "ID 460", "ID 320", etc. are not journal citations so ignore these.   >
+  has_citations: <Do not leave any references from the evidence behind. Do not group any references together even though they are cited from the same source. For example, Harris et al. (2008), Harris et al. (2009a), Harris et al. (2009b) should be extracted separately. Form the extraction as follows:
+    'Munoz et al. (2007);IoM (2001);EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA) (2009)'  
+    >
+
+
+  Text:
+  Deficiency in selenium has been shown to result in various disorders including impairment of hair (Biesalski et al., 1995; Sunde, 2006). Clinical manifestations such as white nail beds, pseudoalbinism, alopecia and thin hair have been observed in particular in patients receiving total parenteral nutrition lacking selenium. Administration of selenium was able to restore these deficiency symptoms (Abrams et al., 1992; Kanekura et al., 2005; Masumoto et al., 2007; Vinton et al., 1987). The Panel concludes that a cause and effect relationship has been established between the dietary intake of selenium and maintenance of normal hair. However, the evidence provided does not establish that inadequate intake of selenium leading to impaired maintenance of normal hair occurs in the general EU population.
+
+  ===
+
+extracted_object:
+  url: AUTO:483ac4f3-37e4-4f94-a328-beebd9f8965d
+  label: Selenium contributes to the maintenance of normal hair.
+  has_food_constituent: selenium
+  has_dose:
+    has_unit: "'ns'"
+    has_value: "'ns'"
+  has_target_population: general population
+  has_evidence:
+    text: Deficiency in selenium has been shown to result in various disorders including
+      impairment of hair (Biesalski et al., 1995; Sunde, 2006). Clinical manifestations
+      such as white nail beds, pseudoalbinism, alopecia and thin hair have been observed
+      in particular in patients receiving total parenteral nutrition lacking selenium.
+      Administration of selenium was able to restore these deficiency symptoms (Abrams
+      et al., 1992; Kanekura et al., 2005; Masumoto et al., 2007; Vinton et al., 1987).
+      The Panel concludes that a cause and effect relationship has been established
+      between the dietary intake of selenium and maintenance of normal hair. However,
+      the evidence provided does not establish that inadequate intake of selenium
+      leading to impaired maintenance of normal hair occurs in the general EU population.
+    has_citations: Biesalski et al. (1995);Sunde (2006);Abrams et al. (1992);Kanekura
+      et al. (2005);Masumoto et al. (2007);Vinton et al. (1987)
+  has_phenotype: normal hair

@@ -1,0 +1,57 @@
+---
+input_text: --
+raw_completion_output: |-
+  label: A cause and effect relationship has not been established between the dietary intake of selenium and the maintenance of normal joints.
+  has_food_constituent: selenium
+  has_dose: [No specific dosage amount mentioned in the text]
+  has_target_population: general population
+  has_evidence: A total of 15 references were provided for the scientific substantiation of the claim. Ten human studies assessed plasma selenium concentrations in patients with rheumatoid arthritis or adult T-cell leukemia. Five human intervention studies were conducted on patients with rheumatoid arthritis or chronic polyarthritis. The Panel considers that the evidence provided does not establish that patients with arthritis of different origins are representative of the general population concerning the status of joint tissue. Also, the results obtained in studies on subjects with arthritis relating to the treatment of symptoms of these diseases cannot be extrapolated to the maintenance of normal joints in the general population. Therefore, no conclusions can be drawn from these references for the scientific substantiation of the claimed effect. The Panel concludes that a cause and effect relationship has not been established between the dietary intake of selenium and the maintenance of normal joints.
+  has_phenotype: normal joints
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  text: <Extract the evidence (including all citations) from the text below. Include both supporting and contradicting evidence.
+    1. Take a long-form, highly detailed and descriptive approach. Avoid adding your own analysis, summarization.
+    2. Incorporate, for study cited, all details pertaining to:
+      2.1 the type of clinical studies
+      2.2 mechanism of actions
+      2.3 dosages used in the study, including amounts and frequency
+      2.4 efficacy
+      2.5 limitations.
+    3. Overall assessment, evidence weighting, and conclusion drawn by the panel.
+    2. Include all citations of references to journal articles in the text, as they appear in context of the evidence.
+    3. Output as ONE block/paragraph of plain text, without quotes. Note that terms like "ID 460", "ID 320", etc. are not journal citations so ignore these.   >
+  has_citations: <Do not leave any references from the evidence behind. Do not group any references together even though they are cited from the same source. For example, Harris et al. (2008), Harris et al. (2009a), Harris et al. (2009b) should be extracted separately. Form the extraction as follows:
+    'Munoz et al. (2007);IoM (2001);EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA) (2009)'  
+    >
+
+
+  Text:
+  A total of 15 references were provided for the scientific substantiation of the claim. Ten human studies assessed plasma selenium concentrations in patients with rheumatoid arthritis or adult T-cell leukemia. Five human intervention studies were conducted on patients with rheumatoid arthritis or chronic polyarthritis. The Panel considers that the evidence provided does not establish that patients with arthritis of different origins are representative of the general population concerning the status of joint tissue. Also, the results obtained in studies on subjects with arthritis relating to the treatment of symptoms of these diseases cannot be extrapolated to the maintenance of normal joints in the general population. Therefore, no conclusions can be drawn from these references for the scientific substantiation of the claimed effect. The Panel concludes that a cause and effect relationship has not been established between the dietary intake of selenium and the maintenance of normal joints.
+
+  ===
+
+extracted_object:
+  url: AUTO:df153bb3-a6ab-4525-915c-de3a6635826a
+  label: A cause and effect relationship has not been established between the dietary
+    intake of selenium and the maintenance of normal joints.
+  has_food_constituent: selenium
+  has_dose:
+    has_unit: "'ns'"
+    has_value: "'ns'"
+  has_target_population: general population
+  has_evidence:
+    text: The text outlines the evidence provided to substantiate the claim that dietary
+      intake of selenium helps in the maintenance of normal joints. A total of 15
+      references were reviewed, comprising ten human studies that assessed plasma
+      selenium concentrations in patients with rheumatoid arthritis or adult T-cell
+      leukemia, and five human intervention studies conducted on patients with rheumatoid
+      arthritis or chronic polyarthritis. However, the Panel found that the evidence
+      does not support the claim because the subjects with arthritis are not considered
+      representative of the general population regarding joint tissue status. Furthermore,
+      the results from these studies on the treatment of arthritis symptoms are not
+      applicable to the maintenance of normal joints in the general population. Thus,
+      no definitive conclusions could be drawn. The Panel concluded that a cause and
+      effect relationship between dietary selenium intake and normal joint maintenance
+      has not been established.
+  has_phenotype: normal joints

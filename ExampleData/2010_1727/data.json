@@ -1,0 +1,16 @@
+[
+    {
+        "Food": "Selenium",
+        "Target_population": "General population",
+        "Phenotype": "Maintenance of normal hair",
+        "Citations": "Biesalski et al. (1995),Sunde (2006),Abrams et al. (1992),Kanekura et al. (2005),Masumoto et al. (2007),Vinton et al. (1987)",
+        "DOI": "10.1002/food,19950390528,ISBN 9781578812004,10.1177/0115426592007004175,10.1111/j.1365-2230.2005.01746.x,10.1016/j.nut.2007.08.001,10.1016/s0022-3476(87)80247-0"
+    },
+    {
+        "Food": "Selenium",
+        "Target_population": "General population",
+        "Phenotype": "Normal nails",
+        "Citations": "Biesalski et al. (1995),Sunde (2006),Abrams et al. (1992),Kanekura et al. (2005),Masumoto et al. (2007),Vinton et al. (1987)",
+        "DOI": "10.1002/food,19950390528,ISBN 9781578812004,10.1177/0115426592007004175,10.1111/j.1365-2230.2005.01746.x,10.1016/j.nut.2007.08.001,10.1016/s0022-3476(87)80247-0"
+    }
+]

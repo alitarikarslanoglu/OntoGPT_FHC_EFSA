@@ -1,0 +1,57 @@
+---
+input_text: --
+raw_completion_output: |-
+  label: Selenium intake does not contribute to protection against heavy metals
+  has_food_constituent: Selenium
+  has_dose: Not specified
+  has_target_population: general population
+  has_evidence: One reference was provided for the scientific substantiation of the claim which was a textbook in which the claimed effect was mentioned. No further evidence was provided in support of the claim. The Panel considers that no conclusions can be drawn from this reference for the scientific substantiation of the claimed effect. The Panel concludes that a cause and effect relationship has not been established between the dietary intake of selenium and protection against heavy metals. The Panel considers that in order to bear the claims a food should be at least a source of selenium as per Annex to Regulation (EC) No 1924/2006. Such amounts can be easily consumed as part of a balanced diet. The target population is the general population. Tolerable Upper Intake Levels (ULs) have been established for adults, pregnant and lactating woman, children and adolescents (SCF, 2000). Overall, the evidence provided was insufficient to substantiate the claimed effect.
+  has_phenotype: protection against heavy metals
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  text: <Extract the evidence (including all citations) from the text below. Include both supporting and contradicting evidence.
+    1. Take a long-form, highly detailed and descriptive approach. Avoid adding your own analysis, summarization.
+    2. Incorporate, for study cited, all details pertaining to:
+      2.1 the type of clinical studies
+      2.2 mechanism of actions
+      2.3 dosages used in the study, including amounts and frequency
+      2.4 efficacy
+      2.5 limitations.
+    3. Overall assessment, evidence weighting, and conclusion drawn by the panel.
+    2. Include all citations of references to journal articles in the text, as they appear in context of the evidence.
+    3. Output as ONE block/paragraph of plain text, without quotes. Note that terms like "ID 460", "ID 320", etc. are not journal citations so ignore these.   >
+  has_citations: <Do not leave any references from the evidence behind. Do not group any references together even though they are cited from the same source. For example, Harris et al. (2008), Harris et al. (2009a), Harris et al. (2009b) should be extracted separately. Form the extraction as follows:
+    'Munoz et al. (2007);IoM (2001);EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA) (2009)'  
+    >
+
+
+  Text:
+  One reference was provided for the scientific substantiation of the claim which was a textbook in which the claimed effect was mentioned. No further evidence was provided in support of the claim. The Panel considers that no conclusions can be drawn from this reference for the scientific substantiation of the claimed effect. The Panel concludes that a cause and effect relationship has not been established between the dietary intake of selenium and protection against heavy metals. The Panel considers that in order to bear the claims a food should be at least a source of selenium as per Annex to Regulation (EC) No 1924/2006. Such amounts can be easily consumed as part of a balanced diet. The target population is the general population. Tolerable Upper Intake Levels (ULs) have been established for adults, pregnant and lactating woman, children and adolescents (SCF, 2000). Overall, the evidence provided was insufficient to substantiate the claimed effect.
+
+  ===
+
+extracted_object:
+  url: AUTO:fe11f062-7969-4219-81d1-dc688b380345
+  label: Selenium intake does not contribute to protection against heavy metals
+  has_food_constituent: Selenium
+  has_dose:
+    has_unit: "'ns'"
+    has_value: "'ns'"
+  has_target_population: general population
+  has_evidence:
+    text: The provided reference for the scientific substantiation of the claim was
+      a textbook in which the claimed effect was mentioned, with no further evidence
+      provided to support the claim. The Panel evaluates that no conclusions can be
+      drawn from this reference regarding the scientific substantiation of the claimed
+      effect. Consequently, the Panel concludes that a cause and effect relationship
+      has not been established between the dietary intake of selenium and protection
+      against heavy metals. It is considered by the Panel that to bear the claims,
+      a food should at least be a source of selenium according to the Annex to Regulation
+      (EC) No 1924/2006. These amounts can easily be consumed as part of a balanced
+      diet by the general population. Tolerable Upper Intake Levels (ULs) for selenium
+      have been established for adults, pregnant and lactating women, children, and
+      adolescents (SCF, 2000). Overall, the evidence presented was deemed insufficient
+      to substantiate the claimed effect.
+    has_citations: SCF (2000)
+  has_phenotype: protection against heavy metals
