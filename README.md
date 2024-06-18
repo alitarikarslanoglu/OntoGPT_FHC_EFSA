@@ -25,20 +25,19 @@ OntoGPT runs on the command line, though there's also a minimal web app interfac
 
 5. Place `ClaimAnalysis.yaml` and `ClaimAnalysis.py` into `ontogpt > src > ontogpt > templates`
 
-6. Set the directories according to you preferences in the code. In `extract_sessions.ipynb` , `pdf_dorectory_manager.ipynb` and `main.ipynb`
+6. Set the directories according to you preference in the code. 
 7. Set api keys
-8. When running `extract_sessions.ipynb`, openai library meeds to be set openai==0.28. It is already located in the first cell in the file
-9.  Before running `main.ipynb` run:
+8.  Before running `main.ipynb` run:
     ```bash
     pip install --upgrade openai
     ```
 
-10. After adjustments, running sequence must be as `pdf_dorectory_manager.ipynb` -> `extract_sessions.ipynb` -> `main.ipynb`
+9. After adjustments, running sequence must be as `pdf_dorectory_manager.ipynb` -> `section_detector.ipynb` -> `main.ipynb` -> `output_json_format.ipynb` -> `reference_retrieval.ipynb` -> `doi_generator.ipynb` -> `validation_data_preprocessing.ipynb` -> `evaluation_function.ipynb`
 
 
 ## EFSA_DOCUMENTATION:
 
 This document is the instance of how the automation created works.
 
-Each folder inside, consists of one pdf EFSA published. Additionally, there is a folder called `claims` where each text file represents the  related content for a claim and each turtle file has the rdf of extracted object.
+Each folder inside, consists of one pdf EFSA published. Additionally, there is a folder called `claims` where each text file represents the  related raw content for a claim and each json of extracted object.
 
