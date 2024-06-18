@@ -123,17 +123,11 @@ class AnnotatorResult(ConfiguredBaseModel):
 class FoodHealthClaim(CompoundExpression):
     url: str = Field(...)
     label: Optional[str] = Field(None, description="""statement of the health claim being made""")
-    has_food_constituent: Optional[str] = Field(None, description="""food constituent that is the subject of the health claim""")
+    has_food_constituent: Optional[str] = Field(None, description="""food constituent that is the subject of the health claim. If the abreviation is mentioned in the text, take that as the food constituent.""")
     has_dose: Optional[Dose] = Field(None, description="""The dosage amount of the food constituent as in 250g/day. If it isnt mentioned, leave it 'not specified'.""")
     has_target_population: Optional[str] = Field(None, description="""The target population for the health claim""")
     has_evidence: Optional[Evidence] = Field(None, description="""Evidence supporting the health claim""")
-    has_health_effect: Optional[HealthEffect] = Field(None, description="""claimed health effect on the human body""")
-
-
-class TargetPopulation(NamedEntity):
-    has_quality: Optional[str] = Field(None, description="""The biological quality of the target population""")
-    id: str = Field(..., description="""A unique identifier for the named entity""")
-    label: Optional[str] = Field(None, description="""The label (name) of the named thing""")
+    has_phenotype: Optional[str] = Field(None, description="""phenotype in the claimed health effect on the human body""")
 
 
 class Dose(ConfiguredBaseModel):
@@ -143,32 +137,11 @@ class Dose(ConfiguredBaseModel):
 
 class HealthEffect(CompoundExpression):
     refers_to_phenotype: Optional[str] = Field(None, description="""phenotype mentioned in the health effect""")
-    refers_to_relationship_effect: Optional[str] = Field(None, description="""relationship effect being claimed.""")
-
-
-class FoodConstituent(NamedEntity):
-    id: str = Field(..., description="""A unique identifier for the named entity""")
-    label: Optional[str] = Field(None, description="""The label (name) of the named thing""")
-
-
-class Phenotype(NamedEntity):
-    id: str = Field(..., description="""A unique identifier for the named entity""")
-    label: Optional[str] = Field(None, description="""The label (name) of the named thing""")
-
-
-class RelationshipEffect(ConfiguredBaseModel):
-    url: str = Field(...)
 
 
 class Evidence(CompoundExpression):
     text: Optional[str] = Field(None, description="""Supporting evidence of a health claim.""")
-    has_citations: Optional[str] = Field(None, description="""The references cited in the evidence as \"(Munoz et al., 2007), (IoM, 2001)\"""")
-
-
-class Citations(NamedEntity):
-    url: Optional[str] = Field(None, description="""The unique identifier of the reference""")
-    id: str = Field(..., description="""A unique identifier for the named entity""")
-    label: Optional[str] = Field(None, description="""The label (name) of the named thing""")
+    has_citations: Optional[str] = Field(None, description="""The references cited in the evidence""")
 
 
 # Model rebuild
@@ -183,12 +156,7 @@ RelationshipType.model_rebuild()
 Publication.model_rebuild()
 AnnotatorResult.model_rebuild()
 FoodHealthClaim.model_rebuild()
-TargetPopulation.model_rebuild()
 Dose.model_rebuild()
 HealthEffect.model_rebuild()
-FoodConstituent.model_rebuild()
-Phenotype.model_rebuild()
-RelationshipEffect.model_rebuild()
 Evidence.model_rebuild()
-Citations.model_rebuild()
 

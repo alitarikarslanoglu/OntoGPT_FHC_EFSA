@@ -49,8 +49,8 @@ classes:
           owl: AnnotationProperty, AnnotationAssertion
       
       has_food_constituent: 
-        range: FoodConstituent
-        description: food constituent that is the subject of the health claim
+        range: string
+        description: food constituent that is the subject of the health claim. If the abreviation is mentioned in the text, take that as the food constituent.
         slot_uri: sio:SIO_000628
         annotations:
           prompt: >-
@@ -68,49 +68,48 @@ classes:
             '3 g/day'
           owl: ObjectProperty
       has_target_population:
-        range: TargetPopulation
-        description: The target population for the health claim
         slot_uri: sio:SIO_000628
+        range: string
+        description: The target population for the health claim
         annotations:
           prompt: >-
-            Extract the target population for the health claim. 
-            For demonstration, the structure should be along the lines of - 
-            'general population'
+            Extract the biological target population. 
+            For demonstration, the structure should be like along the lines of - Keep it short and simple as given in the text.
+            'general population','Adults performing high intensity exercise','Adult men and women'
           owl: ObjectProperty
+        
+        
       has_evidence:
         range: Evidence
         description: Evidence supporting the health claim
         slot_uri: sio:SIO_000628
         annotations:
           prompt: >-
-            Extract the evidence supporting the health claim. 
-            For demonstration, the structure should be along the lines of - 
-            Collect the supporting evidence and keep the citations. Avoid sentences starts with 'The Panel'
+            Extract the evidence (including all citations) from the text below. Include both supporting and contradicting evidence.
+              1. Take a long-form, highly detailed and descriptive approach. Avoid adding your own analysis, summarization.
+              2. Incorporate, for study cited, all details pertaining to:
+                2.1 the type of clinical studies
+                2.2 mechanism of actions
+                2.3 dosages used in the study, including amounts and frequency
+                2.4 efficacy
+                2.5 limitations.
+              3. Overall assessment, evidence weighting, and conclusion drawn by the panel.
+              2. Include all citations of references to journal articles in the text, as they appear in context of the evidence.
+              3. Output as ONE block/paragraph of plain text, without quotes. Note that terms like "ID 460", "ID 320", etc. are not journal citations so ignore these.   
+              
           owl: ObjectProperty
       
-      has_health_effect: 
-        range: HealthEffect
-        description: claimed health effect on the human body
-        slot_uri: sio:SIO_000628
-        annotations:
-          prompt: >-
-            Extract the claimed health effect on the human body. 
-            For demonstration, the structure should be along the lines of - 
-            'maintenance of normal blood cholesterol concentrations' or 'reduction of excessive intestinal gas accumulation'
-          owl: ObjectProperty
-  TargetPopulation:
-    is_a: NamedEntity
-    attributes:
-      has_quality:
-        description: The biological quality of the target population
+      has_phenotype: 
         range: string
+        description: phenotype in the claimed health effect on the human body
         slot_uri: sio:SIO_000628
         annotations:
           prompt: >-
-            Extract the biological quality of the target population. 
-            For demonstration, the structure should be like along the lines of - 
-            'general population','Adults performing high intensity exercise','Adult men and women'
+            Extract the phenotype mentioned in the health effect. 
+            As demonstration, phenotype in 'maintenance of normal blood cholesterol concentrations' would be
+            'normal blood cholesterol concentration' or 'Contribution to normal energy-yielding metabolism' would be 'normal energy-yielding metabolism'
           owl: ObjectProperty
+
   Dose:
     attributes:
       has_unit:
@@ -122,6 +121,7 @@ classes:
             Extract the unit of the dose. 
             For demonstration, the structure should be along the lines of - 
             'g','mg','ns'(for not specified)
+            "Source amounts as per Annex to Regulation (EC) No 1924/2006" means 'ns'
           owl: ObjectProperty
       has_value:
         description: The numerical value of the dose
@@ -129,96 +129,43 @@ classes:
         slot_uri: sio:SIO_000628
         annotations:
           prompt: >-
-            Extract the numerical value of the dose. 
+            Extract the value of the dose. 
             For demonstration, the structure should be along the lines of - 
             '3', 'ns'(for not specified)
-          owl: ObjectProperty
-  HealthEffect: 
-    is_a: CompoundExpression 
-    attributes: 
-      refers_to_phenotype: 
-        range: Phenotype
-        description: phenotype mentioned in the health effect
-        slot_uri: sio:SIO_000628
-        annotations: 
-          prompt: >-
-            Extract the phenotype mentioned in the health effect. 
-            As demonstration, phenotype in 'maintenance of normal blood cholesterol concentrations' would be
-            'blood cholesterol concentration'
+            "Source amounts as per Annex to Regulation (EC) No 1924/2006" means 'ns'
           owl: ObjectProperty
 
-      refers_to_relationship_effect: 
-        range: RelationshipEffect 
-        description: relationship effect being claimed.  
-        slot_uri: sio:SIO_000628
-        annotations: 
-          prompt: >-
-            Extract the relation-effect being claimed for the phenotype. Classify as one of: 
-            1. Enhancing a function 
-            2. Maintaning a function 
-            3. Reducing a risk factor 
-          owl: ObjectProperty
-  FoodConstituent: 
-    is_a: NamedEntity
-    id_prefixes: 
-      - DRON
-      - MESH
-    annotations: 
-      annotators: 
-        sqlite:obo:dron, sqlite:obo:mesh
-    # attributes: 
-    #   url:
-    #     identifier: true
-    #     range: string
-    #     slot_uri: rdf:Resource
-    #     annotations:
-    #       prompt.skip: true
-
-  Phenotype: 
-    is_a: NamedEntity
-    class_uri: sio:SIO_010056 
-    # attributes:
-      # url:
-      #   identifier: true
-      #   range: uriorcurie
-      #   slot_uri: rdf:Resource
-      #   annotations:
-      #     prompt.skip: true
-    id_prefixes: 
-      - GO
-      - MESH
-    annotations: 
-      annotators: 
-        sqlite:obo:go, sqlite:obo:mesh
-
-  RelationshipEffect: 
-    attributes: 
-      url:
-        identifier: true
-        range: uriorcurie
-        slot_uri: rdf:Resource
-        annotations:
-          prompt.skip: true
-  
   Evidence:
     is_a: CompoundExpression
     attributes:
       text:
         description: Supporting evidence of a health claim.
+        annotations:
+          prompt: >-
+            Extract the evidence (including all citations) from the text below. Include both supporting and contradicting evidence.
+              1. Take a long-form, highly detailed and descriptive approach. Avoid adding your own analysis, summarization.
+              2. Incorporate, for study cited, all details pertaining to:
+                2.1 the type of clinical studies
+                2.2 mechanism of actions
+                2.3 dosages used in the study, including amounts and frequency
+                2.4 efficacy
+                2.5 limitations.
+              3. Overall assessment, evidence weighting, and conclusion drawn by the panel.
+              2. Include all citations of references to journal articles in the text, as they appear in context of the evidence.
+              3. Output as ONE block/paragraph of plain text, without quotes. Note that terms like "ID 460", "ID 320", etc. are not journal citations so ignore these.   
+
         range: string
         slot_uri: rdf:Resource
 
       has_citations:
         slot_uri: sio:SIO_000628
-        description: The references cited in the evidence as "(Munoz et al., 2007), (IoM, 2001)"
-        range: Citations
-  Citations:
-    is_a: NamedEntity
-    attributes:
-      url:
-        identifier: false
-        description: The unique identifier of the reference
-        range: string
-        slot_uri: rdf:Resource
+        description: The references cited in the evidence
         annotations:
-          prompt.skip: true
+          prompt: >-
+            Do not leave any references from the evidence behind.
+            Do not group any references together even though they are cited from the same source. For example, Harris et al. (2008), Harris et al. (2009a), Harris et al. (2009b) should be extracted separately.
+            Form the extraction as follows:
+              'Munoz et al. (2007);IoM (2001);EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA) (2009)'  
+              
+        range: string
+  
